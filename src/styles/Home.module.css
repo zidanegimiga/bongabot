@@ -1,27 +1,269 @@
 .main {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
+  /* padding: 6rem; */
   min-height: 100vh;
   background: radial-gradient(100.48% 77.50% at 40.10% 57.32%, #B79FFF 0%, rgba(244, 240, 255, 0.16) 84.32%, rgba(255, 255, 255, 0.00) 100%);
+  position: relative;
+  justify-content: space-between;
+}
+
+.leftMainContainer {
+  width: 50%;
+  height: 100vh;
+  padding-left: 6em;
+  padding-top: 9em;
+}
+
+.leftMainInnerContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 24px;
+  padding-left: 6em;
+}
+
+.dialogBox {
+  position: relative;
+  background: url("/dialogIllustration.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 328px;
+  height: 228px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.dialogBoxText {
+  color: white;
+  font-size: 24px;
+  letter-spacing: 1.5px;
+  transform: skewX(-15deg)
+}
+
+.layer1,
+.layer2,
+.layer3 {
+  font-size: 56px;
+  margin-top: -12px;
+}
+
+.layer1 span,
+.layer2 span,
+.layer3 span {
+  color: #FF3BFF
+}
+
+.layer4 {
+  font-size: 80px;
+  letter-spacing: 4px;
+  color: #5600BD;
+  font-weight: 500;
+  margin-top: -12px;
+}
+
+.mascotImg {
+  width: 373px;
+  height: 445px;
+  margin-top: 72px;
+  transition: all ease-in-out 0.5s;
+  animation: mascotJump 2.5s ease-in-out infinite;
+}
+
+@keyframes mascotJump {
+  0% {
+    transform: translateY(-50px);
+  }
+
+  50% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-50px);
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  width: 100%;
+  /* border: red 1px solid; */
+  justify-content: flex-start;
+  padding-left: 48px;
+  gap: 48px;
+  margin-top: 48px;
+}
+
+.buttonLeft,
+.buttonRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  gap: 16px;
+  background-color: #B79FFF;
+  width: 320px;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.buttonLeft:hover,
+.buttonRight:hover {
+  gap: 24px
+}
+
+.buttonLeft {
+  border-radius: 8px;
+  background: linear-gradient(45deg, #E5146B 0%, #5C00C4 100%);
+  color: white;
+}
+
+.buttonRight {
+  border-radius: 8px;
+  border: 1px solid #C3C3C3;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.rightMainContainer {
+  width: 40%;
+  height: 100vh;
+  background: url("/chipLines.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-color: green; */
 }
 
 /* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
+@media (hover: hover) and (pointer: fine) {}
+
+@media (prefers-reduced-motion) {}
+
+@media (max-width: 1441px) {
+  .leftMainContainer {
+    padding-left: 3em;
+    padding-top: 6em;
+  }
 }
 
-@media (prefers-reduced-motion) {
+@media (max-width: 1025px) {
+  .leftMainContainer{
+    width: 80%;
+  }
+
+  .leftMainInnerContainer{
+    justify-content: flex-start;
+    padding-left: 3em;
+  }
+  .rightMainContainer {
+    width: 20%
+  }
+}
+
+@media (max-width: 769px) {
+  .leftMainContainer {
+    width: 80%;
+    padding-left: 1em;
+  }
+
+  .dialogBox {
+    transform: scale(70%);
+  }
+
+  .leftMainInnerContainer {
+    justify-content: flex-start;
+    padding-left: 1em;
+  }
+
+  .rightMainContainer {
+    width: 20%
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+    padding-left: 0;
+    gap: 8px;
+  }
+
+  .layer1,
+  .layer2,
+  .layer3 {
+    font-size: 32px;
+    margin-top: -12px;
+  }
+
+  .layer4{
+    font-size: 48px;
+  }
+
+    .mascotImg {
+      position: absolute;
+      z-index: 1;
+      right: 10%;
+      width: 300px;
+      height: 400px;
+      top: 20%;
+    }
+}
+
+@media (max-width: 452px) {
+  .leftMainContainer {
+    width: 80%;
+    padding-left: 1em;
+  }
+
+  .dialogBox {
+    transform: scale(40%) translateX(-40%);
+  }
+
+  .leftMainInnerContainer {
+    justify-content: flex-start;
+    padding-left: 0em;
+  }
+
+  .rightMainContainer {
+    width: 20%
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+    padding-left: 0;
+    gap: 8px;
+  }
+
+  .layer1,
+  .layer2,
+  .layer3 {
+    font-size: 28px;
+    margin-top: -5px;
+  }
+
+  .layer4{
+    font-size: 42px;
+  }
+
+    .mascotImg {
+      position: absolute;
+      z-index: 1;
+      right: 10%;
+      width: auto;
+      height: 200px;
+      top: 20%;
+      transform: scale(50%);
+    }
 }
 
 /* Mobile */
-@media (max-width: 700px) {
-}
+@media (max-width: 700px) {}
 
 /* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
-}
+@media (min-width: 701px) and (max-width: 1120px) {}
 
 @media (prefers-color-scheme: dark) {
   .vercelLogo {
